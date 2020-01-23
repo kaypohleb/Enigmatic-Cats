@@ -1,0 +1,266 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="author" content="Caleb Foo">
+    <title>EnigmaJSTest</title>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="Rotors.js"></script>
+    <script type="text/javascript" src="Reflector.js"></script>
+    <script type="text/javascript" src="Steckerbrett.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Enigma Machine</h1>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    I
+                </td>
+                <td>
+                    II
+                </td>
+                <td>
+                    III
+                </td>
+            </tr>
+        <tr>
+            <td>
+        <select type="text" id="dropRotorFirst">
+            <option value="0">--</option>
+            <option value="1">I</option>
+            <option value="2">II</option>
+            <option value="3">III</option>
+            <option value="4">IV</option>
+            <option value="5">V</option>
+            <option value="6">VI</option>
+            <option value="7">VII</option>
+            <option value="8">VIII</option>
+        </select>
+        </td>
+        <td>
+        <select type="text" id="dropRotorSecond">
+            <option value="0">--</option>
+            <option value="1">I</option>
+            <option value="2">II</option>
+            <option value="3">III</option>
+            <option value="4">IV</option>
+            <option value="5">V</option>
+            <option value="6">VI</option>
+            <option value="7">VII</option>
+            <option value="8">VIII</option>
+        </select>
+    </td>
+        <td>
+        <select type="text" id="dropRotorThird">
+            <option value="0">--</option>
+            <option value="1">I</option>
+            <option value="2">II</option>
+            <option value="3">III</option>
+            <option value="4">IV</option>
+            <option value="5">V</option>
+            <option value="6">VI</option>
+            <option value="7">VII</option>
+            <option value="8">VIII</option>
+        </select>
+        </td>
+    </tr>
+    </table>
+    </div>
+    <div id="firstans"></div>
+    <div id="secondans"></div>
+    <div id="thirdans"></div>
+
+    <div id="rotorselection"></div>
+    <div id="rotorselectText"></div>
+    <div id="isOK"></div>
+    <input id="testrotor" type="text">
+    <div id="testrotortext"></div>
+    <button id="rotorstep">Step</button>
+    <div>
+        <p>Reflector</p>
+        <select type="text" id="dropReflector">
+            <option value="0">--</option>
+            <option value="1">b_thin</option>
+            <option value="2">c_thin</option>
+        </select>
+    </div>
+    <div id="reflectorans"></div>
+    <div id="reflectorSelection"></div>
+    <input id="testreflector" type="text">
+    <div id="steckerbrettdiv">
+        <p>SteckerBrett</p>
+        <table>
+            <tr>
+                <td>
+                    A
+                </td>
+                <td>
+                    B
+                </td>
+                <td>
+                    C
+                </td>
+                <td>
+                    D
+                </td>
+                <td>
+                    E
+                </td>
+                <td>
+                    F
+                </td>
+                <td>
+                    G
+                </td>
+                <td>
+                    H
+                </td>
+                <td>
+                    I
+                </td>
+                <td>
+                    J
+                </td>
+                <td>
+                    K
+                </td>
+                <td>
+                    L
+                </td>
+                <td>
+                    M
+                </td>  
+            </tr>
+            
+            <tr>
+                <td>
+                    <input class="stk" id="A" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="B" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="C" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="D" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="E" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="F" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="G" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="H" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="I" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="J" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="K" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="L" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="M" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    N
+                </td>
+                <td>
+                    O
+                </td>
+                <td>
+                    P
+                </td>
+                <td>
+                    Q
+                </td>
+                <td>
+                    R
+                </td>
+                <td>
+                    S
+                </td>
+                <td>
+                    T
+                </td>
+                <td>
+                    U
+                </td>
+                <td>
+                    V
+                </td>
+                <td>
+                    W
+                </td>
+                <td>
+                    X
+                </td>
+                <td>
+                    Y
+                </td>
+                <td>
+                    Z
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="stk" id="N" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="O" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="P" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="Q" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="R" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="S" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="T" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="U" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="V" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="W" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="X" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="Y" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+                <td>
+                    <input class="stk" id="Z" maxlength="1" type="text" required pattern="[a-zA-Z]{1}">
+                </td>
+            </tr>
+            <tr><input id="teststk" type="text"></tr>
+            
+        </table>
+    </div>
+</body>
+</html>
